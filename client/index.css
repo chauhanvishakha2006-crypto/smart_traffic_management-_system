@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-slate-900/60 backdrop-blur-xl border border-slate-700 shadow-xl rounded-xl;
+  }
+  
+  .glow {
+    box-shadow: 0 0 15px currentColor;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+}
+
+@keyframes driveNsAnim {
+  0% { top: 100%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: -20%; opacity: 0; }
+}
+
+@keyframes driveEwAnim {
+  0% { left: 100%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: -20%; opacity: 0; }
+}
+
+.animate-drive-ns {
+  animation: driveNsAnim 2s linear infinite;
+}
+
+.animate-drive-ew {
+  animation: driveEwAnim 2s linear infinite;
+}
